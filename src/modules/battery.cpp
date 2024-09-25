@@ -256,6 +256,7 @@ namespace modules {
    * Get the output format based on state
    */
   string battery_module::get_format() const {
+
     switch (m_state) {
       case battery_module::state::FULL:
         return FORMAT_FULL;

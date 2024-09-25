@@ -22,3 +22,6 @@ set(SETTING_PATH_TEMPERATURE_INFO "/sys/class/thermal/thermal_zone%zone%/temp"
   CACHE STRING "Path to file containing the current temperature")
 set(SETTING_PATH_THERMAL_ZONE_WILDCARD "/sys/class/thermal/thermal_zone*"
   CACHE STRING "Wildcard path to different thermal zones")
+
+set(SETTING_PATH_CPU_FAN "/sys/class/hwmon/hwmon4/fan1_input"
+  CACHE STRING "Path to file containing CPU Fan speed")

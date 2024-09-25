@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iomanip>
 #include <istream>
+#include <iostream>
 
 #include "drawtypes/label.hpp"
 #include "drawtypes/progressbar.hpp"
@@ -10,20 +11,26 @@
 
 #include "modules/meta/base.inl"
 
+
 POLYBAR_NS
 
 namespace modules {
   template class module<memory_module>;
 
+
   memory_module::memory_module(const bar_settings& bar, string name_, const config& config)
       : timer_module<memory_module>(bar, move(name_), config) {
+
+
     set_interval(1s);
     m_perc_memused_warn = m_conf.get(name(), "warn-percentage", 90);
+
 
     m_formatter->add(DEFAULT_FORMAT, TAG_LABEL, {TAG_LABEL, TAG_BAR_USED, TAG_BAR_FREE, TAG_RAMP_USED, TAG_RAMP_FREE,
                                                  TAG_BAR_SWAP_USED, TAG_BAR_SWAP_FREE, TAG_RAMP_SWAP_USED, TAG_RAMP_SWAP_FREE});
     m_formatter->add_optional(FORMAT_WARN, {TAG_LABEL_WARN, TAG_BAR_USED, TAG_BAR_FREE, TAG_RAMP_USED, TAG_RAMP_FREE,
                                                  TAG_BAR_SWAP_USED, TAG_BAR_SWAP_FREE, TAG_RAMP_SWAP_USED, TAG_RAMP_SWAP_FREE});
+
 
     if (m_formatter->has(TAG_LABEL)) {
       m_label = load_optional_label(m_conf, name(), TAG_LABEL, "%percentage_used%%");
@@ -33,7 +40,9 @@ namespace modules {
     }
     if (m_formatter->has(TAG_BAR_USED)) {
       m_bar_memused = load_progressbar(m_bar, m_conf, name(), TAG_BAR_USED);
+
     }
+
     if (m_formatter->has(TAG_BAR_FREE)) {
       m_bar_memfree = load_progressbar(m_bar, m_conf, name(), TAG_BAR_FREE);
     }
@@ -65,6 +74,8 @@ namespace modules {
 
     try {
       std::ifstream meminfo(PATH_MEMORY_INFO);
+
+
       std::map<std::string, unsigned long long int> parsed;
 
       std::string line;

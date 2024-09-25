@@ -1,6 +1,7 @@
 #pragma once
 
 #include "modules/meta/base.hpp"
+#include "iostream"
 
 POLYBAR_NS
 

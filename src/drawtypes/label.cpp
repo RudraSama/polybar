@@ -179,6 +179,7 @@ namespace drawtypes {
 
     name = string_util::ltrim(string_util::rtrim(move(name), '>'), '<');
 
+
     string text;
 
     struct side_values padding {

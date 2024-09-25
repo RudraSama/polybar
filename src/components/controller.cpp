@@ -97,6 +97,7 @@ bool controller::run(bool writeback, string snapshot_dst, bool confwatch) {
   assert(!m_connection.connection_has_error());
 
   m_writeback = writeback;
+
   m_snapshot_dst = move(snapshot_dst);
 
   m_sig.attach(this);

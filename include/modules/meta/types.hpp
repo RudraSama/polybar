@@ -26,6 +26,7 @@ namespace modules {
   static constexpr const char XKEYBOARD_TYPE[] = "internal/xkeyboard";
   static constexpr const char XWINDOW_TYPE[] = "internal/xwindow";
   static constexpr const char XWORKSPACES_TYPE[] = "internal/xworkspaces";
+  static constexpr const char CPU_FAN_TYPE[] = "internal/fan";
 
   static constexpr const char IPC_TYPE[] = "custom/ipc";
   static constexpr const char MENU_TYPE[] = "custom/menu";

@@ -22,6 +22,7 @@
 #include "modules/xbacklight.hpp"
 #include "modules/xwindow.hpp"
 #include "modules/xworkspaces.hpp"
+#include "modules/cpu_fan.hpp"
 #if ENABLE_I3
 #include "modules/i3.hpp"
 #endif

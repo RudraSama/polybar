@@ -14,6 +14,7 @@ using namespace eventloop;
 
 int main(int argc, char** argv) {
   // clang-format off
+  //
   const command_line::options opts{
       command_line::option{"-h", "--help", "Display this help and exit"},
       command_line::option{"-v", "--version", "Display build details and exit"},

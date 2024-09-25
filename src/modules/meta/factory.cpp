@@ -39,7 +39,7 @@ namespace modules {
   template<const char* module_type>
   static factory_map::value_type map_entry_unsupported() {
     return {
-      module_type, 
+      module_type,
       [](const bar_settings&, string&&, const config&) -> module_t {
         throw application_error("No built-in support for '" + string(module_type) + "'");
       }
@@ -56,6 +56,7 @@ namespace modules {
       map_entry<bspwm_module>(),
       map_entry<cpu_module>(),
       map_entry<date_module>(),
+      map_entry<cpu_fan_module>(),
 #if ENABLE_CURL
       map_entry<github_module>(),
 #else
